@@ -25,7 +25,7 @@ module ULID
     String.build do |io|
       len.times do |i|
         mod = ms % ENCODING_LEN
-        io << ENCODING[mod]
+        io << ENCODING[mod.to_i]
         ms = (ms - mod) / ENCODING_LEN
       end
     end.reverse
